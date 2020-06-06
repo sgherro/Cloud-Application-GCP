@@ -1,0 +1,21 @@
+<h1>
+    <form method="POST">
+        <div style=" color:rgb(101, 121, 14);font-size:medium"> Benvenuto nella {{room}}</div>
+        <div style=" color:gray;font-size:small">
+            {{ form.name.label}}<br> {{form.name(size=10)}}
+        </div>
+        <div style=" color:gray;font-size:small">
+            {{ form.msg.label}}<br> {{ form.msg(size=50) }}
+        </div>
+        {{ form.submit()}}
+        <ul style="list-style-type: none;"> {% for m in viewMsg %}
+            <li>
+                <div style="color: rgb(20, 16, 18); font-size: small;">
+                    {{m}}</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </form>
+
+
+</h1>

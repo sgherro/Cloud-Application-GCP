@@ -1,0 +1,17 @@
+{% block content %}
+
+<h1>
+    <form method="POST" target="{{ url_for('greeting_link') }}">
+
+        <p type="text" name="greeting_name">
+            {{ form.entry.label}}<br> {{form.entry(size=20)}}
+        </p>
+        <p>
+            {{ form.submit()}}
+        </p>
+        <p>
+            Ultimo accesso {{ date }}
+        </p>
+    </form>
+</h1>
+{% endblock content %}

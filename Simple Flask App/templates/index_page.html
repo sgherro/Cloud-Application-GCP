@@ -1,0 +1,12 @@
+<html>
+
+<body>
+    {% for r in room_list %}
+    <li>
+        <a href="{{ url_for('rooms', room =  r ) }}"> {{ r }}</a></li>
+    {% endfor %}
+    </ul>
+
+</body>
+
+</html>
