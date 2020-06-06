@@ -1,0 +1,25 @@
+<h1>
+    <form method="GET">
+        <div style=" color:rgb(101, 121, 14);font-size:medium"> Lista Prenotazioni </div>
+
+        <div style="list-style-type: none;">
+            {% for date in date_list %}
+
+            <div style="color: rgb(0, 0, 0); font-size: small;">
+                + {{date}} :
+                <ul style="list-style-type: none;">
+                    <div style="color: rgb(0, 0, 0); font-size: small;">
+                        {% for time in date_list[date] %}
+                        <li>
+                            - {{ time }} : Posti prenotati: {{ date_list[date][time] }} , Posti liberi: {{ 100 - date_list[date][time] }}
+                        </li>
+                    </div>
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% endfor %}
+        </div>
+    </form>
+</h1>

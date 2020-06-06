@@ -1,0 +1,15 @@
+runtime: python
+env: flex
+entrypoint: gunicorn api:app
+
+service: api
+
+runtime_config:
+  python_version: 3
+
+readiness_check:
+  app_start_timeout_sec: 3000
+
+endpoints_api_service:
+  name: cinema-sac1203.appspot.com
+  rollout_strategy: managed
