@@ -1,0 +1,8 @@
+runtime: python37
+
+handlers: 
+  - url: /.*
+    script: auto
+
+env_variables:
+  PUBSUB_VERIFICATION_TOKEN: abc12345

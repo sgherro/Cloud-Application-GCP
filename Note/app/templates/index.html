@@ -1,0 +1,28 @@
+<h1>
+
+    <form method="GET">
+        <div style=" color:rgb(101, 121, 14);font-size:medium"> Shared Notes </div>
+
+        <div style="list-style-type: none;">
+            {% for owner in list_owner %}
+
+            <div style="color: rgb(0, 0, 0); font-size: small;">
+                + {{owner}} :
+                <div> Note:</div>
+                <ul style="list-style-type: none;">
+                    <div style="color: rgb(0, 0, 0); font-size: small;">
+                        {% for note in list_owner[owner] %} Contenuto: {% for n in list_owner[owner][note] %}
+                        <li>
+                            - {{ n }}: {{list_owner[owner][note][n]}} ,
+                        </li>
+                        {% endfor %}
+                    </div>
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% endfor %}
+        </div>
+    </form>
+</h1>

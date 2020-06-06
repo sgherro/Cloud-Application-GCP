@@ -1,0 +1,30 @@
+<h1>
+
+    <form method="GET">
+        <div style=" color:rgb(101, 121, 14);font-size:medium"> Monitor Price </div>
+
+        <div style="list-style-type: none;">
+            {% for user in list_user %}
+
+            <div style="color: rgb(0, 0, 0); font-size: small;">
+                > Utente numero {{user}} :
+                <div> Oggetti scontati:</div>
+                <ul style="list-style-type: none;">
+                    <div style="color: rgb(0, 0, 0); font-size: small;">
+                        {% for items in list_user[user] %} Contenuto: {% for n in list_user[user][items] %}
+                        <li> - {{ n['object_uri'] }}: {{ n['percentage']}}%
+                        </li>
+                        {% endfor %}
+                    </div>
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% endfor %}
+        </div>
+    </form>
+    <div>
+        <a style="color: darkgreen; font-size: medium;" href="{{ url_for('stat') }}"> Statistiche </a>
+    </div>
+</h1>
