@@ -1,0 +1,16 @@
+<h1>
+    <form method="POST">
+        <div style=" color:rgb(101, 121, 14);font-size:medium"> Ricerca aeroporto</div>
+        <div style=" color:gray;font-size:small">
+            Inserire un codice Iata<br>
+        </div>
+
+        <div style=" color:gray;font-size:small">
+            {{ form.search.label}}<br> {{ form.search(size=50) }}
+        </div>
+        {{ form.submit()}}
+        <div style=" color:gray;font-size:small">
+            {% if airport %} {{ airport }} {% endif %}
+        </div>
+    </form>
+</h1>

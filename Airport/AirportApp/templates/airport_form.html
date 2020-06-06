@@ -1,0 +1,19 @@
+<h1>
+    <form method="POST">
+        <div style=" color:rgb(101, 121, 14);font-size:medium"> Inserirmento nuovo aeroporto</div>
+        <div style=" color:gray;font-size:small">
+            Inserire un nome di aeroporto e codice Iata<br>
+        </div>
+
+        <div style=" color:gray;font-size:small">
+            {{ form.name.label}}<br> {{ form.name(size=50) }}
+        </div>
+        <div style=" color:gray;font-size:small">
+            {{ form.iata_code.label}}<br> {{ form.iata_code(size=50) }}
+        </div>
+        {{ form.submit}}
+    </form>
+
+
+
+</h1>
