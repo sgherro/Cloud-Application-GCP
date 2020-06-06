@@ -1,0 +1,31 @@
+<h1>
+    <div>
+        <a style="color: darkgreen; font-size: medium;" href="{{ url_for('search_genre') }}"> Ricerca per genere </a>
+    </div>
+
+    <form method="GET">
+        <div style=" color:rgb(101, 121, 14);font-size:medium"> Catalogo Musicale </div>
+
+        <div style="list-style-type: none;">
+            {% for artist in list_artist %}
+
+            <div style="color: rgb(0, 0, 0); font-size: small;">
+                + {{artist}} :
+                <div> Albums:</div>
+                <ul style="list-style-type: none;">
+                    <div style="color: rgb(0, 0, 0); font-size: small;">
+                        {% for info in list_artist[artist] %} Specification: {% for f in list_artist[artist][info] %}
+                        <li>
+                            - {{ f }}: {{list_artist[artist][info][f]}} ,
+                        </li>
+                        {% endfor %}
+                    </div>
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% endfor %}
+        </div>
+    </form>
+</h1>

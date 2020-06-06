@@ -1,0 +1,16 @@
+<form method="POST">
+    <div style=" color:rgb(101, 121, 14);font-size:medium"> Catalogo Musicale per genere</div>
+    <h3 style="font-size: medium;">Search the albums by genres</h3>
+    <h4 style="font-size: medium;">
+        {{ form.genre.label}} {{ form.genre }} {{ form.submit }}
+    </h4>
+    <div>
+        {% for disc in list_disc %}
+        <li style="list-style-type: square;"> Nome disco - {{ disc['name'] }} <br> Specifiche: {% for t in disc%}
+            <li style="list-style-type: none;"> {{ t }} = {{ disc[t] }} </li>{% endfor %} </li>{% endfor %}
+
+    </div>
+
+    <a href="{{ url_for('index') }}">Go back to the Index</a>
+    </div>
+</form>
